@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { fetchAllPokemon } from './api'
+import { API_URL, fetchAllPokemon } from './api'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { PokemonCard } from './components/PokemonCard'
@@ -111,7 +111,7 @@ export default function App() {
             {loadState === 'error' && (
               <div className="state">
                 <p className="state__title">Não foi possível conectar à API.</p>
-                <p>Verifique se o backend Spring Boot está rodando em http://localhost:8080.</p>
+                <p>Verifique se o backend Spring Boot está rodando em {API_URL || 'http://localhost:8080'}.</p>
                 <button className="state__retry" onClick={load}>
                   Tentar novamente
                 </button>

@@ -1,7 +1,13 @@
 import type { Pokemon } from './types'
 
+/**
+ * URL base da API, definida em build pela variável VITE_API_URL.
+ * Vazia = mesma origem: no `npm run dev`, o proxy do Vite repassa /api para o backend.
+ */
+export const API_URL = (import.meta.env.VITE_API_URL ?? '').replace(/\/+$/, '')
+
 export async function fetchAllPokemon(): Promise<Pokemon[]> {
-  const response = await fetch('/api/pokemon')
+  const response = await fetch(`${API_URL}/api/pokemon`)
   if (!response.ok) {
     throw new Error(`API respondeu com status ${response.status}`)
   }
