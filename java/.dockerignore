@@ -1,0 +1,30 @@
+# Saídas de build e caches locais
+build/
+.gradle/
+out/
+bin/
+
+# IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+# Git e arquivos locais
+.git/
+.gitignore
+.gitattributes
+.env
+.env.*
+*.log
+HELP.md
+README.md
+
+# Arquivos do próprio Docker
+Dockerfile
+.dockerignore
